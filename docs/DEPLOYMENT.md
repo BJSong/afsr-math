@@ -12,7 +12,7 @@ vercel --prod
   - `NUXT_PUBLIC_APP_MODE=local` (MVP) → 추후 `cloud`
   - `NUXT_PUBLIC_SUPABASE_URL`, `NUXT_PUBLIC_SUPABASE_ANON_KEY` (cloud 모드)
   - `NUXT_SUPABASE_SERVICE_ROLE_KEY` (서버 전용 — 절대 클라이언트에 노출 금지)
-- `vercel.json`: 보안 헤더 + Server Functions 실행 시간(10초)
+- `vercel.json`: framework 프리셋(`nuxtjs`)만 지정하는 최소 구성. 보안 헤더는 `nuxt.config.ts`의 nitro routeRules, 실행 모드 기본값(`appMode: 'local'`)은 runtimeConfig에 있음. 과거 vercel.json에 넣었던 `env`·`functions`·`headers`·`outputDirectory`는 Vercel 스키마 검증 실패를 일으켜 제거함 (2026-10-14).
 
 ## 2. Supabase 설정 (Phase 3)
 
